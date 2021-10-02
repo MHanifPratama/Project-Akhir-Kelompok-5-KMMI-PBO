@@ -11,3 +11,5 @@ Ahmad Taufik 200201027 Universitas Aisyah Pringsewu - Bagian Database
 Program Sistem Koperasi ini dapat melakukan pembuatan akun baik individu maupun perusahaan.
 Setiap akun tersebut juga dapat memiliki lebih dari saru akun Rekening, serta pada masing-masing 
 rekening dapat melakukan transaksi seperti Deposit (Pertambahan) dan Withdraw (Penarikan)
+![image](https://user-images.githubusercontent.com/77886299/135711196-f14906f9-da28-4484-a02d-0df98d953caa.png)
+![image](https://user-images.githubusercontent.com/77886299/135711210-5efc9dd7-41e2-4ef9-a7df-b274b62611c1.png)
