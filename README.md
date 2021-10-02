@@ -6,3 +6,5 @@ Namun dapat ditambahkan dengan menekan terlebih dahulu  tombol "BERSIHKAN DATA" 
 M Hanif Pratama 2017051040 Universitas Lampung - Koding Bagian Class, implementasi UML, Penghubung UI dan Database
 
 Vizar Sampurna jaya 2015061032 Universitas Lampung - Bagian UI
+
+Ahmad Taufik 200201027 Universitas Aisyah Pringsewu - Bagian Database 
