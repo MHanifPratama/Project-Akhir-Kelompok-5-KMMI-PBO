@@ -89,6 +89,7 @@
                                                             <TableColumn fx:id="colNpwp" prefWidth="198.0" text="NPWP" />
                                                         </columns>
                                                       </TableView>
+                                                      <Label fx:id="labelSamping" layoutX="803.0" layoutY="203.0" prefHeight="37.0" prefWidth="170.0" />
                                                    </children>
                                                 </AnchorPane>
                                                 <AnchorPane prefHeight="200.0" prefWidth="979.0">
@@ -108,9 +109,11 @@
                                                             <AnchorPane prefHeight="204.0" prefWidth="543.0">
                                                                <children>
                                                                   <TextField fx:id="tfIDKecil" disable="true" layoutX="14.0" layoutY="30.0" prefHeight="39.0" prefWidth="230.0" promptText="ID" />
-                                                                  <TextField fx:id="tfNewRekening" disable="true" layoutX="14.0" layoutY="75.0" prefHeight="39.0" prefWidth="230.0" promptText="Nomor Rekening Baru" />
-                                                                  <TextField fx:id="tfNewSaldo" layoutX="14.0" layoutY="122.0" prefHeight="39.0" prefWidth="230.0" promptText="Saldo Rekening Baru" />
-                                                                  <Button fx:id="btnTambahkanAkun" layoutX="315.0" layoutY="62.0" mnemonicParsing="false" onAction="#HandleAddAccountKecil" prefHeight="42.0" prefWidth="199.0" text="Tambahkan Akun" />
+                                                                  <TextField fx:id="tfNewRekening" disable="true" layoutX="14.0" layoutY="83.0" prefHeight="39.0" prefWidth="230.0" promptText="Nomor Rekening Baru" />
+                                                                  <TextField fx:id="tfNewSaldo" layoutX="14.0" layoutY="133.0" prefHeight="39.0" prefWidth="230.0" promptText="Saldo Rekening Baru" />
+                                                                  <Button fx:id="btnTambahkanAkun" layoutX="315.0" layoutY="29.0" mnemonicParsing="false" onAction="#HandleAddAccountKecil" prefHeight="42.0" prefWidth="199.0" text="Tambahkan Akun" />
+                                                                  <Button fx:id="btnTambahSaldo" layoutX="315.0" layoutY="81.0" mnemonicParsing="false" onAction="#HandleAddSaldoKecil" prefHeight="42.0" prefWidth="199.0" text="Deposit" />
+                                                                  <Button fx:id="btnWithdraw" layoutX="315.0" layoutY="133.0" mnemonicParsing="false" onAction="#HandleWithdraw" prefHeight="42.0" prefWidth="199.0" text="Withdraw" />
                                                                </children>
                                                             </AnchorPane>
                                                          </children>
@@ -173,6 +176,7 @@
                                                             <TableColumn fx:id="colNibPerusahaan" prefWidth="252.0" text="NIB" />
                                                         </columns>
                                                       </TableView>
+                                                      <Label fx:id="labelSampingPerusahaan" layoutX="858.0" layoutY="181.0" prefHeight="37.0" prefWidth="142.0" />
                                                    </children>
                                                 </AnchorPane>
                                                 <AnchorPane prefHeight="260.0" prefWidth="1014.0">
@@ -194,7 +198,9 @@
                                                                   <TextField fx:id="tfIDKecilPerusahaan" disable="true" layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="230.0" promptText="ID" />
                                                                   <TextField fx:id="tfRekeningBaruPerusahaan" disable="true" layoutX="14.0" layoutY="62.0" prefHeight="39.0" prefWidth="230.0" promptText="Nomor Rekening Baru" />
                                                                   <TextField fx:id="tfNewSaldoPerusahaan" layoutX="14.0" layoutY="115.0" prefHeight="39.0" prefWidth="230.0" promptText="Saldo" />
-                                                                  <Button fx:id="btnTambahkanAkun1Perusahaan" layoutX="268.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleAddAccountKecilPerusahaan" prefHeight="42.0" prefWidth="199.0" text="Tambahkan Akun" />
+                                                                  <Button fx:id="btnTambahkanAkun1Perusahaan" layoutX="268.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleAddAccountKecilPerusahaan" prefHeight="42.0" prefWidth="199.0" text="Tambahkan Akun" />
+                                                                  <Button fx:id="btnTambahSaldoPerusahaan" layoutX="268.0" layoutY="68.0" mnemonicParsing="false" onAction="#handeAddTambahSaldoKecilPerusahaan" prefHeight="42.0" prefWidth="199.0" text="Deposit" />
+                                                                  <Button fx:id="btnWithdrawPerusahaan" layoutX="268.0" layoutY="123.0" mnemonicParsing="false" onAction="#handleWithdrawPerusahaan" prefHeight="42.0" prefWidth="199.0" text="Withdraw" />
                                                                </children>
                                                             </AnchorPane>
                                                          </children>
