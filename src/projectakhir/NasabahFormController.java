@@ -158,7 +158,9 @@ public class NasabahFormController implements  Initializable{
 
     @FXML
     private TextField tfAlamatPerusahaan;
-
+    
+    
+           
     @FXML
     private TextField tfNibPerusahaan;
 
@@ -167,6 +169,107 @@ public class NasabahFormController implements  Initializable{
 
     @FXML
     private TextField tfSaldoPerusahaan;
+    
+    @FXML
+    private Button btnTambahSaldo;
+    
+    @FXML
+    private Button btnTambahsaldoPerusahaan;
+    
+
+    
+    @FXML
+    private Button handeAddTambahSaldoKecilPerusahaan;
+    
+    @FXML
+    void handeAddTambahSaldoKecilPerusahaan(ActionEvent event){
+        Rekening rek = tblRekPerusahaan.getSelectionModel().getSelectedItem();
+          try {
+              lele.addSaldo(rek, Double.parseDouble(tfNewSaldoPerusahaan.getText()));
+              labelSampingPerusahaan.setText("Deposit Berhasil");
+          } catch (SQLException ex) {
+              Logger.getLogger(NasabahFormController.class.getName()).log(Level.SEVERE, null, ex);
+              labelSampingPerusahaan.setText("Deposit Gagal");
+          }
+        btnReloadPerusahaan.fire();
+        viewDataPerusahaan(Integer.parseInt(tfIDKecilPerusahaan.getText()));
+        tfNewSaldoPerusahaan.setText("");
+        
+    }
+    @FXML
+    private Label labelSamping;
+    @FXML
+    private Label labelSampingPerusahaan;
+    @FXML
+    private Button btnWithdraw;
+    
+    @FXML
+    private Button btnWithdrawPerusahaan;
+    
+    @FXML
+    void HandleAddSaldoKecil(ActionEvent event){
+        Rekening rek = tblRekening.getSelectionModel().getSelectedItem();
+          try {
+              lele.addSaldo(rek, Double.parseDouble(tfNewSaldo.getText()));
+              labelSamping.setText("Deposit Berhasil");
+          } catch (SQLException ex) {
+              Logger.getLogger(NasabahFormController.class.getName()).log(Level.SEVERE, null, ex);
+                            labelSamping.setText("Deposit Berhasil");
+
+          }
+        btnReload.fire();
+        viewDataAccount(Integer.parseInt(tfIDKecil.getText()));
+        tfNewSaldo.setText("");
+        
+    }
+    @FXML
+    void HandleWithdraw(ActionEvent event){
+        Rekening rek = tblRekening.getSelectionModel().getSelectedItem();
+        if (rek.getSaldo()>=Double.parseDouble(tfNewSaldo.getText())){
+            try {
+                lele.withdraw(rek, Double.parseDouble(tfNewSaldo.getText()));
+                btnReload.fire();
+                viewDataAccount(Integer.parseInt(tfNewRekening.getText()));
+                tfNewSaldo.setText("");
+                labelSamping.setText("Withdraw Berhasil");
+            } catch (SQLException ex) {
+                labelSamping.setText("Withdraw Gagal");
+                Logger.getLogger(NasabahFormController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else {
+            labelSamping.setText("Withdraw Gagal");
+        }
+        btnReload.fire();
+        viewDataAccount(Integer.parseInt(tfIDKecil.getText()));
+        tfNewSaldo.setText("");
+    }
+    
+    @FXML
+    private Button btnWithdawPerusaan;
+    
+    @FXML
+    void handleWithdrawPerusahaan(ActionEvent event){
+        Rekening rek = tblRekPerusahaan.getSelectionModel().getSelectedItem();
+        if (rek.getSaldo()>=Double.parseDouble(tfNewSaldoPerusahaan.getText())){
+            try {
+                lele.withdraw(rek, Double.parseDouble(tfNewSaldoPerusahaan.getText()));
+                btnReloadPerusahaan.fire();
+                viewDataAccount(Integer.parseInt(tfRekeningBaruPerusahaan.getText()));
+                tfNewSaldoPerusahaan.setText("");
+                labelSampingPerusahaan.setText("Withdraw Berhasil");
+            } catch (SQLException ex) {
+                labelSampingPerusahaan.setText("Withdraw Gagal");
+                Logger.getLogger(NasabahFormController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else {
+            labelSampingPerusahaan.setText("Withdraw Gagal");
+        }
+        btnReloadPerusahaan.fire();
+        viewDataPerusahaan(Integer.parseInt(tfIDKecilPerusahaan.getText()));
+        tfNewSaldoPerusahaan.setText("");
+    }
     
     @FXML
     void HandleAddAccountKecil(ActionEvent event) {
@@ -186,7 +289,7 @@ public class NasabahFormController implements  Initializable{
               Rekening acc = new Rekening(Integer.parseInt(tfRekeningBaruPerusahaan.getText()),
                               Double.parseDouble(tfNewSaldoPerusahaan.getText()));
               lele.addAccount(Integer.parseInt(tfIDKecilPerusahaan.getText()),acc);
-              viewDataAccount(Integer.parseInt(tfIDKecilPerusahaan.getText()));
+              viewDataPerusahaan(Integer.parseInt(tfIDKecilPerusahaan.getText()));
           } catch (SQLException ex) {
               Logger.getLogger(NasabahFormController.class.getName()).log(Level.SEVERE, null, ex);
           }
@@ -246,7 +349,7 @@ public class NasabahFormController implements  Initializable{
         btnTambahkanAkun1Perusahaan.setDisable(true);
     }
     
-
+    
     @FXML
     void handleSave(ActionEvent event) {
         //Long nik, Long npwp, String nama, String alamat, Rekening rekening, Integer id
